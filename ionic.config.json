@@ -1,0 +1,7 @@
+{
+  "name": "mapper-frontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
