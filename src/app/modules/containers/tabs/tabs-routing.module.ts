@@ -1,0 +1,23 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { TabsComponent } from './tabs.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: TabsComponent,
+    children: [
+      {
+        path: 'home',
+        loadChildren: () =>
+          import('./home/home.component').then((m) => m.HomeComponent),
+      },
+    ],
+  },
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+})
+export class TabsPageRoutingModule {}
