@@ -1,0 +1,10 @@
+<div class="badge-scroll-wrapper">
+  @for (badge of badge; track badge.name) {
+  <app-badge
+    [badgeText]="badge.label"
+    (handleToggleActive)="handleToggleActive($event)"
+    [isActive]="isActive()"
+    [isFixed]="isFixed()"
+  ></app-badge>
+  }
+</div>

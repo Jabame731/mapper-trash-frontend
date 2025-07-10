@@ -1,0 +1,13 @@
+<ion-chip class="custom-badge">
+  <ion-button
+    size="small"
+    fill="clear"
+    color="light"
+    (click)="toggleActive(badgeText())"
+  >
+    @if(icon()) {
+    <ion-icon [name]="icon()" class="badge-icon"></ion-icon>
+    }
+    {{ badgeText() }}
+  </ion-button>
+</ion-chip>

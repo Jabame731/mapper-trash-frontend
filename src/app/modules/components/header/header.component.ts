@@ -15,12 +15,5 @@ import { notificationsOutline, search } from 'ionicons/icons';
   imports: [IonToolbar, IonImg, IonButton, IonIcon],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {
-    addIcons({
-      notificationsOutline,
-      search,
-    });
-  }
-
   ngOnInit() {}
 }

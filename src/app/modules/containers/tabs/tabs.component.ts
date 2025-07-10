@@ -5,6 +5,9 @@ import {
   IonTabButton,
   IonTabs,
   IonLabel,
+  IonHeader,
+  IonContent,
+  IonRouterOutlet,
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import {
@@ -13,12 +16,25 @@ import {
   copyOutline,
   personOutline,
 } from 'ionicons/icons';
+import { RouterLinkWithHref } from '@angular/router';
+import { HeaderComponent } from '../../components';
 
 @Component({
   selector: 'app-tabs',
   templateUrl: './tabs.component.html',
   styleUrls: ['./tabs.component.scss'],
-  imports: [IonIcon, IonTabBar, IonTabButton, IonTabs, IonLabel],
+  imports: [
+    IonIcon,
+    IonTabBar,
+    IonTabButton,
+    IonTabs,
+    IonLabel,
+    RouterLinkWithHref,
+    IonHeader,
+    HeaderComponent,
+    IonContent,
+    IonRouterOutlet,
+  ],
 })
 export class TabsComponent implements OnInit {
   constructor() {

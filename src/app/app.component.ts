@@ -1,26 +1,19 @@
 import { Component } from '@angular/core';
-import {
-  IonApp,
-  IonRouterOutlet,
-  IonFooter,
-  IonContent,
-  IonHeader,
-} from '@ionic/angular/standalone';
-import { HeaderComponent } from './modules/components';
+import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
+
+import { badgeOpts } from './models';
+import * as allIcons from 'ionicons/icons';
+import { addIcons } from 'ionicons';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  imports: [
-    IonApp,
-    IonRouterOutlet,
-    HeaderComponent,
-
-    IonFooter,
-    IonContent,
-    IonHeader,
-  ],
+  imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent {
-  constructor() {}
+  badge = badgeOpts;
+
+  constructor() {
+    addIcons(allIcons);
+  }
 }

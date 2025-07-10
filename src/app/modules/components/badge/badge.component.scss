@@ -1,0 +1,20 @@
+ion-chip {
+  --background: #1951b0;
+  padding: 0 4px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+
+  ion-button {
+    --padding-start: 4px;
+    --padding-end: 5px;
+    --min-height: 24px;
+    font-size: 11px;
+    --box-shadow: none;
+  }
+
+  .badge-icon {
+    font-size: 14px;
+    margin-right: 4px;
+  }
+}

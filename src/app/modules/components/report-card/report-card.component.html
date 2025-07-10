@@ -1,0 +1,29 @@
+<ion-card class="alert-card">
+  <ion-card-content>
+    <div class="alert-card-container">
+      <div class="alert-info">
+        <ion-avatar class="icon-avatar">
+          <ion-icon [name]="icon()"></ion-icon>
+        </ion-avatar>
+        <div class="text-info">
+          <div class="title-row">
+            <span class="alert-title">{{ title() }}</span>
+            <ion-chip [color]="getBageColor(priority())" class="priority-chip">
+              <ion-label>{{ priority() }}</ion-label>
+            </ion-chip>
+          </div>
+          <p class="location">{{ location() }}</p>
+          <div class="meta-info">
+            <ion-icon name="location-outline" class="meta-icon"></ion-icon>
+            <span class="meta-text">{{ distance() }} miles away</span>
+            <ion-icon
+              name="time-outline"
+              class="meta-icon time-icon"
+            ></ion-icon>
+            <span class="meta-text">{{ time() }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-card-content>
+</ion-card>

@@ -1,0 +1,24 @@
+.badge-scroll-wrapper {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: 2px;
+  padding: 10px;
+
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+
+  /* Hide scrollbar - cross-browser */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.badge-scroll-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+ion-chip {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}

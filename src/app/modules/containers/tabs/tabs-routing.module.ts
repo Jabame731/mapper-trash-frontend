@@ -8,9 +8,29 @@ const routes: Routes = [
     component: TabsComponent,
     children: [
       {
-        path: 'home',
-        loadChildren: () =>
-          import('./home/home.component').then((m) => m.HomeComponent),
+        path: 'home/all',
+        loadComponent: () =>
+          import('./home/home.component').then((c) => c.HomeComponent),
+      },
+      {
+        path: 'map',
+        loadComponent: () =>
+          import('./map/map.component').then((c) => c.MapComponent),
+      },
+      {
+        path: 'reports',
+        loadComponent: () =>
+          import('./reports/reports.component').then((c) => c.ReportsComponent),
+      },
+      {
+        path: 'profile',
+        loadComponent: () =>
+          import('./profile/profile.component').then((c) => c.ProfileComponent),
+      },
+      {
+        path: '',
+        redirectTo: 'home/all',
+        pathMatch: 'full',
       },
     ],
   },
