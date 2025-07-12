@@ -1,1 +1,170 @@
-<div class="content">reportss</div>
+<!-- tabs/reports/reports.page.html -->
+<ion-content>
+  <!-- Period Selector -->
+  <div class="period-selector" style="margin-top: 70px">
+    <!-- <ion-segment [(ngModel)]="selectedPeriod">
+      <ion-segment-button value="week">
+        <ion-label>This Week</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="month">
+        <ion-label>This Month</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="year">
+        <ion-label>This Year</ion-label>
+      </ion-segment-button>
+    </ion-segment> -->
+  </div>
+
+  <!-- Key Metrics -->
+  <div class="metrics-container">
+    <div class="metrics-grid">
+      <ion-card class="metric-card">
+        <ion-card-content>
+          <div class="metric-header">
+            <span class="metric-icon">🗑️</span>
+            <ion-chip color="success" size="small">
+              <ion-label>{{ metrics.reportsSubmitted.change }}</ion-label>
+            </ion-chip>
+          </div>
+          <div class="metric-value">{{ metrics.reportsSubmitted.value }}</div>
+          <div class="metric-label">Reports Submitted</div>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card class="metric-card">
+        <ion-card-content>
+          <div class="metric-header">
+            <span class="metric-icon">✅</span>
+            <ion-chip color="success" size="small">
+              <ion-label>{{ metrics.itemsCleaned.change }}</ion-label>
+            </ion-chip>
+          </div>
+          <div class="metric-value">{{ metrics.itemsCleaned.value }}</div>
+          <div class="metric-label">Items Cleaned</div>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card class="metric-card">
+        <ion-card-content>
+          <div class="metric-header">
+            <span class="metric-icon">🌍</span>
+            <ion-chip color="primary" size="small">
+              <ion-label>{{ metrics.ecoPoints.change }}</ion-label>
+            </ion-chip>
+          </div>
+          <div class="metric-value">{{ metrics.ecoPoints.value }}</div>
+          <div class="metric-label">Eco Points Earned</div>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card class="metric-card">
+        <ion-card-content>
+          <div class="metric-header">
+            <span class="metric-icon">🏆</span>
+            <ion-chip color="warning" size="small">
+              <ion-label>{{ metrics.ranking.change }}</ion-label>
+            </ion-chip>
+          </div>
+          <div class="metric-value">{{ metrics.ranking.value }}</div>
+          <div class="metric-label">Community Ranking</div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+  <!-- Trash Types Breakdown -->
+  <div class="section-container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Trash Types Reported</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="trash-types">
+          <div *ngFor="let type of trashTypes" class="trash-type-item">
+            <div class="type-header">
+              <div class="type-info">
+                <span class="type-icon">{{ type.icon }}</span>
+                <span class="type-name">{{ type.type }}</span>
+              </div>
+              <span class="type-count">{{ type.count }} items</span>
+            </div>
+            <ion-progress-bar
+              [value]="type.percentage / 100"
+              [color]="type.color"
+            >
+            </ion-progress-bar>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Weekly Activity Chart -->
+  <div class="section-container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Weekly Activity</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="chart-container">
+          <div class="chart">
+            <div *ngFor="let data of weeklyData" class="chart-bar">
+              <div class="bar" [style.height.%]="data.height"></div>
+              <span class="bar-label">{{ data.day }}</span>
+            </div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Recent Achievements -->
+  <div class="section-container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Recent Achievements</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="achievements">
+          <div
+            *ngFor="let achievement of achievements"
+            class="achievement-item"
+          >
+            <div
+              class="achievement-icon"
+              [style.background-color]="achievement.color + '20'"
+            >
+              <span>{{ achievement.icon }}</span>
+            </div>
+            <div class="achievement-info">
+              <div class="achievement-title">{{ achievement.title }}</div>
+              <div class="achievement-description">
+                {{ achievement.description }}
+              </div>
+            </div>
+            <div class="achievement-time">{{ achievement.timeAgo }}</div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Export Options -->
+  <div class="section-container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Export Data</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button expand="block" fill="outline" class="export-btn">
+          <ion-icon name="download-outline" slot="start"></ion-icon>
+          Download CSV Report
+        </ion-button>
+        <ion-button expand="block" fill="outline" class="export-btn">
+          <ion-icon name="mail-outline" slot="start"></ion-icon>
+          Email Monthly Summary
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

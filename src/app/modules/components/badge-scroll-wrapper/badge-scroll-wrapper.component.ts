@@ -1,5 +1,4 @@
 import { Component, EventEmitter, input, Output } from '@angular/core';
-import { IonContent } from '@ionic/angular/standalone';
 import { BadgeComponent } from '../badge/badge.component';
 import { badgeOpts } from 'src/app/models';
 
@@ -7,7 +6,7 @@ import { badgeOpts } from 'src/app/models';
   selector: 'app-badge-scroll-wrapper',
   templateUrl: './badge-scroll-wrapper.component.html',
   styleUrls: ['./badge-scroll-wrapper.component.scss'],
-  imports: [IonContent, BadgeComponent],
+  imports: [BadgeComponent],
 })
 export class BadgeScrollWrapperComponent {
   constructor() {}

@@ -1,3 +1,163 @@
-.content {
-  margin-top: 70px;
+/* tabs/reports/reports.page.scss */
+.period-selector {
+  padding: 16px;
+}
+
+.metrics-container {
+  padding: 0 16px;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.metric-card {
+  margin: 0;
+}
+
+.metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.metric-icon {
+  font-size: 24px;
+}
+
+.metric-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--ion-color-dark);
+  margin-bottom: 4px;
+}
+
+.metric-label {
+  font-size: 12px;
+  color: var(--ion-color-medium);
+}
+
+.section-container {
+  padding: 8px 16px;
+}
+
+.trash-types {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.trash-type-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.type-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.type-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.type-icon {
+  font-size: 18px;
+}
+
+.type-name {
+  font-weight: 500;
+}
+
+.type-count {
+  font-size: 14px;
+  color: var(--ion-color-medium);
+}
+
+.chart-container {
+  padding: 16px 0;
+}
+
+.chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  height: 120px;
+  gap: 8px;
+}
+
+.chart-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.bar {
+  width: 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px 4px 0 0;
+  min-height: 20px;
+}
+
+.bar-label {
+  font-size: 12px;
+  color: var(--ion-color-medium);
+  margin-top: 8px;
+}
+
+.achievements {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.achievement-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--ion-color-light);
+  border-radius: 8px;
+}
+
+.achievement-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.achievement-info {
+  flex: 1;
+}
+
+.achievement-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.achievement-description {
+  font-size: 14px;
+  color: var(--ion-color-medium);
+}
+
+.achievement-time {
+  font-size: 12px;
+  color: var(--ion-color-medium);
+}
+
+.export-btn {
+  margin-bottom: 8px;
 }

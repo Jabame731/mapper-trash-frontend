@@ -5,8 +5,6 @@ import {
   IonButton,
   IonIcon,
 } from '@ionic/angular/standalone';
-import { addIcons } from 'ionicons';
-import { notificationsOutline, search } from 'ionicons/icons';
 
 @Component({
   selector: 'app-header',

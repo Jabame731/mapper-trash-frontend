@@ -1,0 +1,31 @@
+// :host {
+//   --height: 50vh;
+//   display: block;
+//   height: 50vh;
+//   border-top-left-radius: 16px;
+//   border-top-right-radius: 16px;
+//   overflow: hidden;
+// }
+
+.modal-wrapper {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.modal-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.modal-body {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.modal-footer {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}

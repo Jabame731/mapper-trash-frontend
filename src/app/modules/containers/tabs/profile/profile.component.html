@@ -1,1 +1,258 @@
-<div class="content">profile works!</div>
+<div>
+  <ion-app>
+    <ion-content fullscreen="true" class="ion-padding">
+      <!-- Profile Header Card -->
+      <ion-card class="profile-header-card" style="margin-top: 60px">
+        <ion-card-content class="ion-text-center">
+          <div class="profile-avatar">
+            <ion-avatar>
+              <img
+                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjMTBiOTgxIi8+Cjx0ZXh0IHg9IjUwIiB5PSI1NSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjM2IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkpEPC90ZXh0Pgo8L3N2Zz4K"
+                alt="Profile Picture"
+              />
+            </ion-avatar>
+            <ion-button
+              fill="clear"
+              size="small"
+              class="edit-avatar-btn"
+              onclick="changeAvatar()"
+            >
+              <ion-icon name="camera-outline"></ion-icon>
+            </ion-button>
+          </div>
+
+          <ion-text>
+            <h2>Joe Denkins</h2>
+          </ion-text>
+
+          <!-- Stats Row -->
+          <div class="stats-container">
+            <div class="stat-item">
+              <ion-text color="dark">
+                <h3>47</h3>
+                <p>Reports</p>
+              </ion-text>
+            </div>
+            <div class="stat-item">
+              <ion-text color="success">
+                <h3>156</h3>
+                <p>Points</p>
+              </ion-text>
+            </div>
+            <div class="stat-item">
+              <ion-text color="tertiary">
+                <h3>12</h3>
+                <p>Cleanups</p>
+              </ion-text>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+      <!-- Achievements Section -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+            <ion-icon name="trophy-outline" color="warning"></ion-icon>
+            Achievements
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div class="achievements-grid">
+            <div class="achievement-item unlocked">
+              <div class="achievement-icon">🏆</div>
+              <ion-text>
+                <p class="achievement-name">First Report</p>
+                <p class="achievement-desc">Submit your first trash report</p>
+              </ion-text>
+              <ion-icon
+                name="checkmark-circle"
+                color="success"
+                class="unlock-badge"
+              ></ion-icon>
+            </div>
+
+            <div class="achievement-item unlocked">
+              <div class="achievement-icon">⭐</div>
+              <ion-text>
+                <p class="achievement-name">10 Reports</p>
+                <p class="achievement-desc">Submit 10 trash reports</p>
+              </ion-text>
+              <ion-icon
+                name="checkmark-circle"
+                color="success"
+                class="unlock-badge"
+              ></ion-icon>
+            </div>
+
+            <div class="achievement-item unlocked">
+              <div class="achievement-icon">🌍</div>
+              <ion-text>
+                <p class="achievement-name">Eco Warrior</p>
+                <p class="achievement-desc">Complete 5 cleanup activities</p>
+              </ion-text>
+              <ion-icon
+                name="checkmark-circle"
+                color="success"
+                class="unlock-badge"
+              ></ion-icon>
+            </div>
+
+            <div class="achievement-item">
+              <div class="achievement-icon">🦸</div>
+              <ion-text>
+                <p class="achievement-name">Community Hero</p>
+                <p class="achievement-desc">Help clean 50 reported locations</p>
+              </ion-text>
+            </div>
+
+            <div class="achievement-item">
+              <div class="achievement-icon">🏅</div>
+              <ion-text>
+                <p class="achievement-name">Green Champion</p>
+                <p class="achievement-desc">Earn 500 environmental points</p>
+              </ion-text>
+            </div>
+
+            <div class="achievement-item">
+              <div class="achievement-icon">🎯</div>
+              <ion-text>
+                <p class="achievement-name">Trash Hunter</p>
+                <p class="achievement-desc">Report 100 trash locations</p>
+              </ion-text>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+      <!-- Activity Summary -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+            <ion-icon name="bar-chart-outline" color="primary"></ion-icon>
+            Activity Summary
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div class="activity-stats">
+            <ion-item lines="none">
+              <ion-icon
+                name="flag-outline"
+                slot="start"
+                color="danger"
+              ></ion-icon>
+              <ion-label>
+                <h3>Reports This Month</h3>
+                <p>8 reports submitted</p>
+              </ion-label>
+              <ion-note slot="end" color="danger">8</ion-note>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-icon
+                name="checkmark-circle-outline"
+                slot="start"
+                color="success"
+              ></ion-icon>
+              <ion-label>
+                <h3>Cleanups Completed</h3>
+                <p>3 locations cleaned</p>
+              </ion-label>
+              <ion-note slot="end" color="success">3</ion-note>
+            </ion-item>
+
+            <ion-item lines="none">
+              <ion-icon
+                name="star-outline"
+                slot="start"
+                color="warning"
+              ></ion-icon>
+              <ion-label>
+                <h3>Points Earned</h3>
+                <p>45 points this month</p>
+              </ion-label>
+              <ion-note slot="end" color="warning">45</ion-note>
+            </ion-item>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+      <!-- Settings Menu -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+            <ion-icon name="settings-outline" color="medium"></ion-icon>
+            Settings
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="ion-no-padding">
+          <ion-list>
+            <ion-item button onclick="editProfile()">
+              <ion-icon name="person-outline" slot="start"></ion-icon>
+              <ion-label>
+                <h3>Edit Profile</h3>
+                <p>Update your personal information</p>
+              </ion-label>
+              <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+            </ion-item>
+
+            <ion-item button onclick="notificationSettings()">
+              <ion-icon name="notifications-outline" slot="start"></ion-icon>
+              <ion-label>
+                <h3>Notifications</h3>
+                <p>Manage your notification preferences</p>
+              </ion-label>
+              <ion-toggle
+                checked="true"
+                slot="end"
+                onchange="toggleNotifications(event)"
+              ></ion-toggle>
+            </ion-item>
+
+            <ion-item button onclick="privacySettings()">
+              <ion-icon name="shield-outline" slot="start"></ion-icon>
+              <ion-label>
+                <h3>Privacy</h3>
+                <p>Control your privacy settings</p>
+              </ion-label>
+              <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+            </ion-item>
+
+            <ion-item button onclick="helpSupport()">
+              <ion-icon name="help-circle-outline" slot="start"></ion-icon>
+              <ion-label>
+                <h3>Help & Support</h3>
+                <p>Get help and contact support</p>
+              </ion-label>
+              <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+            </ion-item>
+
+            <ion-item button onclick="aboutApp()">
+              <ion-icon
+                name="information-circle-outline"
+                slot="start"
+              ></ion-icon>
+              <ion-label>
+                <h3>About TrashMapper</h3>
+                <p>App version and information</p>
+              </ion-label>
+              <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+            </ion-item>
+
+            <ion-item button onclick="logout()" class="logout-item">
+              <ion-icon
+                name="log-out-outline"
+                slot="start"
+                color="danger"
+              ></ion-icon>
+              <ion-label color="danger">
+                <h3>Logout</h3>
+                <p>Sign out of your account</p>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </ion-content>
+  </ion-app>
+</div>

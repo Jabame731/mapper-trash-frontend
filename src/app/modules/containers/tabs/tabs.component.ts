@@ -9,14 +9,6 @@ import {
   IonContent,
   IonRouterOutlet,
 } from '@ionic/angular/standalone';
-import { addIcons } from 'ionicons';
-import {
-  homeOutline,
-  mapOutline,
-  copyOutline,
-  personOutline,
-} from 'ionicons/icons';
-import { RouterLinkWithHref } from '@angular/router';
 import { HeaderComponent } from '../../components';
 
 @Component({
@@ -29,22 +21,10 @@ import { HeaderComponent } from '../../components';
     IonTabButton,
     IonTabs,
     IonLabel,
-    RouterLinkWithHref,
     IonHeader,
     HeaderComponent,
     IonContent,
     IonRouterOutlet,
   ],
 })
-export class TabsComponent implements OnInit {
-  constructor() {
-    addIcons({
-      homeOutline,
-      mapOutline,
-      copyOutline,
-      personOutline,
-    });
-  }
-
-  ngOnInit() {}
-}
+export class TabsComponent {}

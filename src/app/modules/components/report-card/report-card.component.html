@@ -1,29 +1,76 @@
-<ion-card class="alert-card">
-  <ion-card-content>
-    <div class="alert-card-container">
-      <div class="alert-info">
-        <ion-avatar class="icon-avatar">
-          <ion-icon [name]="icon()"></ion-icon>
-        </ion-avatar>
-        <div class="text-info">
-          <div class="title-row">
-            <span class="alert-title">{{ title() }}</span>
-            <ion-chip [color]="getBageColor(priority())" class="priority-chip">
-              <ion-label>{{ priority() }}</ion-label>
-            </ion-chip>
-          </div>
-          <p class="location">{{ location() }}</p>
-          <div class="meta-info">
-            <ion-icon name="location-outline" class="meta-icon"></ion-icon>
-            <span class="meta-text">{{ distance() }} miles away</span>
-            <ion-icon
-              name="time-outline"
-              class="meta-icon time-icon"
-            ></ion-icon>
-            <span class="meta-text">{{ time() }}</span>
-          </div>
+<div class="reports-list">
+  <ion-card
+    *ngFor="let report of reports"
+    class="report-card"
+    [class.hazardous]="report.hazardous"
+    [class.priority-urgent]="report.priority === 'urgent'"
+    [class.priority-high]="report.priority === 'high'"
+  >
+    <ion-card-content>
+      <!-- Hazard Warning -->
+      <div class="hazard-warning" *ngIf="report.hazardous">
+        <ion-icon name="warning-outline"></ion-icon>
+        Hazardous Material - Handle with Care
+      </div>
+
+      <!-- Report Header -->
+      <div class="report-header">
+        <div>
+          <h3 class="report-title">{{ report.title }}</h3>
+        </div>
+        <ion-chip [color]="getStatusColor(report.status)" class="status-badge">
+          {{ getStatusLabel(report.status) }}
+        </ion-chip>
+      </div>
+
+      <!-- Report Meta -->
+      <div class="report-meta">
+        <div class="meta-item">
+          <ion-icon name="location-outline"></ion-icon>
+          <span>{{ report.location }}</span>
+        </div>
+        <div class="meta-item">
+          <ion-icon name="time-outline"></ion-icon>
+          <span>{{ getTimeAgo(report.reportedDate) }}</span>
+        </div>
+        <div class="meta-item">
+          <ion-icon
+            name="flag-outline"
+            [color]="getPriorityColor(report.priority)"
+          ></ion-icon>
+          <span>{{ getPriorityLabel(report.priority) }}</span>
         </div>
       </div>
-    </div>
-  </ion-card-content>
-</ion-card>
+
+      <!-- Report Description -->
+      <p class="report-description">{{ report.description }}</p>
+
+      <!-- Report Actions -->
+      <div class="report-actions">
+        <div class="action-buttons">
+          <ion-button
+            size="small"
+            fill="outline"
+            color="success"
+            *ngIf="
+              report.status === 'pending' || report.status === 'in-progress'
+            "
+          >
+            <ion-icon name="checkmark-outline" slot="start"></ion-icon>
+            Mark Clean
+          </ion-button>
+
+          <ion-button size="small" fill="outline" color="primary">
+            <ion-icon name="map-outline" slot="start"></ion-icon>
+            View Map
+          </ion-button>
+
+          <ion-button size="small" fill="outline" color="secondary">
+            <ion-icon name="eye-outline" slot="start"></ion-icon>
+            View Report
+          </ion-button>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</div>
